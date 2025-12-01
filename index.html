@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your App – Privacy Policy</title>
+
+    <style>
+        :root {
+            /* Match your app style as closely as possible */
+            --bg-color: #050814;           /* backgroundColor */
+            --card-color: #111827;         /* cardColor */
+            --accent-color: #1d9bf0;       /* buttonColor-ish */
+            --accent-color-soft: #1d9bf033;
+            --text-color: #f9fafb;
+            --subtext-color: #9ca3af;
+            --border-color: #1f2933;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+                "SF Pro Display", system-ui, -system-ui, "Segoe UI", Roboto,
+                Helvetica, Arial, sans-serif;
+            background: radial-gradient(circle at top, #111827 0, #050814 45%, #020617 100%);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        .page {
+            width: 100%;
+            max-width: 900px;
+            padding: 24px 16px 40px;
+        }
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .badge-row {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: var(--accent-color-soft);
+            color: var(--accent-color);
+            font-size: 11px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .badge-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent-color);
+        }
+
+        h1 {
+            font-size: clamp(1.8rem, 4vw, 2.4rem);
+            margin: 4px 0 0;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: var(--subtext-color);
+            font-size: 0.95rem;
+            max-width: 600px;
+        }
+
+        .meta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 12px;
+            font-size: 0.8rem;
+            color: var(--subtext-color);
+        }
+
+        .pill {
+            padding: 4px 10px;
+            border-radius: 999px;
+            border: 1px solid var(--border-color);
+        }
+
+        .card {
+            background: linear-gradient(145deg, #0b1120 0%, #050816 100%);
+            border-radius: 18px;
+            padding: 18px 18px 14px;
+            box-shadow: 0 18px 35px rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(148, 163, 184, 0.18);
+            margin-bottom: 16px;
+        }
+
+        .card h2 {
+            margin: 0 0 6px;
+            font-size: 1.1rem;
+        }
+
+        .card p,
+        .card li {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--subtext-color);
+        }
+
+        .card ul {
+            margin: 6px 0 0 18px;
+            padding: 0;
+        }
+
+        .card ul li + li {
+            margin-top: 4px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+
+        .section-index {
+            width: 20px;
+            height: 20px;
+            border-radius: 999px;
+            background: #020617;
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            color: var(--subtext-color);
+        }
+
+        .email-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(148, 163, 184, 0.5);
+            font-size: 0.85rem;
+            margin-top: 6px;
+        }
+
+        .email-chip span {
+            color: var(--subtext-color);
+        }
+
+        .email-chip a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .email-chip a:hover {
+            text-decoration: underline;
+        }
+
+        .primary-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 18px;
+            padding: 10px 20px;
+            border-radius: 999px;
+            background: var(--accent-color);
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 14px 30px rgba(37, 99, 235, 0.35);
+        }
+
+        .primary-button:hover {
+            background: #0f7ad1;
+        }
+
+        .primary-button span {
+            margin-left: 6px;
+            font-size: 1rem;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 0.75rem;
+            color: var(--subtext-color);
+            text-align: center;
+        }
+
+        @media (max-width: 640px) {
+            .page {
+                padding-inline: 14px;
+            }
+
+            .card {
+                padding: 16px 14px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <!-- Header -->
+    <header class="header">
+        <div class="badge-row">
+            <div class="badge">
+                <div class="badge-dot"></div>
+                Privacy & Data
+            </div>
+        </div>
+
+        <h1>Your App Name – Privacy Policy</h1>
+
+        <p class="subtitle">
+            This page explains how <strong>Your App Name</strong> collects, uses, and protects your data. 
+            We’ve kept it as clear and readable as possible.
+        </p>
+
+        <div class="meta-row">
+            <div class="pill">Last updated: <strong>YYYY-MM-DD</strong></div>
+            <div class="pill">Owner: <strong>Your Company / Your Name</strong></div>
+        </div>
+    </header>
+
+    <!-- Section 1: Overview -->
+    <section class="card">
+        <div class="section-header">
+            <div class="section-index">1</div>
+            <h2>Overview</h2>
+        </div>
+        <p>
+            This Privacy Policy describes how <strong>Your App Name</strong> (“we”, “us”, or “our”) handles 
+            personal data when you use the app. By using the app, you agree to the collection and use of 
+            information in accordance with this policy.
+        </p>
+    </section>
+
+    <!-- Section 2: Data we collect -->
+    <section class="card">
+        <div class="section-header">
+            <div class="section-index">2</div>
+            <h2>Data We Collect</h2>
+        </div>
+        <p>Depending on how you use the app, we may collect:</p>
+        <ul>
+            <li><strong>Account information</strong> – such as your name and email address.</li>
+            <li><strong>Usage data</strong> – basic analytics about how you use the app (if enabled).</li>
+            <li><strong>Device information</strong> – such as device model and OS version (for debugging and support).</li>
+        </ul>
+        <p>
+            We do not collect more data than necessary, and we do not sell your personal data.
+        </p>
+    </section>
+
+    <!-- Section 3: How we use your data -->
+    <section class="card">
+        <div class="section-header">
+            <div class="section-index">3</div>
+            <h2>How We Use Your Data</h2>
+        </div>
+        <p>We use your information to:</p>
+        <ul>
+            <li>Provide and maintain the core functionality of the app.</li>
+            <li>Help you restore your data if you reinstall or switch devices (if applicable).</li>
+            <li>Improve app stability, performance, and user experience.</li>
+            <li>Respond to support requests and feedback you send to us.</li>
+        </ul>
+    </section>
+
+    <!-- Section 4: Third-party services -->
+    <section class="card">
+        <div class="section-header">
+            <div class="section-index">4</div>
+            <h2>Third-Party Services</h2>
+        </div>
+        <p>
+            We may use trusted third-party services (for example, analytics or crash reporting tools) to help us
+            understand app performance and usage. These services may process limited technical data (such as
+            device type or anonymized identifiers) strictly for the purposes described in this policy.
+        </p>
+        <p>
+            We do not allow third parties to use your data for their own marketing or advertising without your consent.
+        </p>
+    </section>
+
+    <!-- Section 5: Your rights -->
+    <section class="card">
+        <div class="section-header">
+            <div class="section-index">5</div>
+            <h2>Your Rights & Choices</h2>
+        </div>
+        <p>
+            Depending on your location, you may have the right to:
+        </p>
+        <ul>
+            <li>Access the personal data we store about you.</li>
+            <li>Request correction or deletion of your personal data.</li>
+            <li>Object to or restrict certain types of processing.</li>
+        </ul>
+        <p>
+            If you’d like to exercise any of these rights, contact us using the email below and we’ll do our best to help.
+        </p>
+    </section>
+
+    <!-- Section 6: Contact -->
+    <section class="card">
+        <div class="section-header">
+            <div class="section-index">6</div>
+            <h2>Contact & Support</h2>
+        </div>
+        <p>
+            If you have any questions about this Privacy Policy or how we handle your data, you can reach us at:
+        </p>
+        <div class="email-chip">
+            <span>Support:</span>
+            <a href="mailto:support@yourdomain.com">support@yourdomain.com</a>
+        </div>
+
+        <a class="primary-button" href="mailto:support@yourdomain.com">
+            Contact support<span>✉️</span>
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        © <span id="year"></span> Your App Name. All rights reserved.
+    </footer>
+</div>
+
+<script>
+    // Set current year automatically
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
