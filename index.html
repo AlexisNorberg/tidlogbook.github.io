@@ -190,6 +190,15 @@
         opacity: 0.85;
     }
 
+    .email-link {
+        color: #559da6;
+        text-decoration: none;
+    }
+
+    .email-link:hover {
+        opacity: 0.8;
+    }
+
     /* Button */
     .primary-button {
         display: inline-flex;
@@ -249,22 +258,17 @@
     <!-- Header -->
     <header class="header">
         <div class="badge-row">
-            <div class="badge">
-                <div class="badge-dot"></div>
-                Privacy & Data
-            </div>
         </div>
 
-        <h1>Tid Logbook – Privacy Policy</h1>
+        <h1>Privacy Policy</h1>
 
         <p class="subtitle">
-            This page explains how <strong>Tid Logbook</strong> collects, uses, and protects your data. 
-            We’ve kept it as clear and readable as possible.
+            During this beta period, all data in <strong>Tid</strong> is stored locally on your device
+            and is not sent to us. This Privacy Policy details how your data is handled.
         </p>
 
         <div class="meta-row">
-            <div class="pill">Last updated: <strong>2025-12-01</strong></div>
-            <div class="pill">Owner: <strong>Tid Logbook</strong></div>
+            <div class="pill">Last update: <strong>2025-12-02</strong></div>
         </div>
     </header>
 
@@ -275,107 +279,61 @@
             <h2>Overview</h2>
         </div>
         <p>
-            This Privacy Policy describes how <strong>Tid Logbook</strong> (“we”, “us”, or “our”) handles 
-            personal data when you use the app. By using the app, you agree to the collection and use of 
-            information in accordance with this policy.
+            This Privacy Policy explains how the app <strong>Tid</strong> (“the App”, “we”, “our”) handles your
+            data during the current beta testing phase. For this beta version, all information you enter or
+            generate in the App is stored locally on your device and is not transmitted to us or our servers.
         </p>
     </section>
 
-    <!-- Section 2: Data we collect -->
+    <!-- Section 2: Data collection -->
     <section class="card">
         <div class="section-header">
             <div class="section-index">2</div>
-            <h2>Data We Collect</h2>
+            <h2>Data Collection</h2>
         </div>
-        <p>Depending on how you use the app, we may collect:</p>
+        <p>
+            The App does not collect, transmit, or store any personal data on our servers.
+            All data remains on your device.
+        </p>
+        <p>In particular, we do not:</p>
         <ul>
-            <li><strong>Account information</strong> – such as your name and email address.</li>
-            <li><strong>Usage data</strong> – basic analytics about how you use the app (if enabled).</li>
-            <li><strong>Device information</strong> – such as device model and OS version (for debugging and support).</li>
+            <li>receive any of your personal data or logbook content;</li>
+            <li>rrack your activity across other apps or websites;</li>
+            <li>use analytics services that send your data to us;</li>
+            <li>share your data with third parties; or</li>
+            <li>use advertising identifiers for tracking or advertising.</li>
         </ul>
         <p>
-            We do not collect more data than necessary, and we do not sell your personal data.
+            All processing of your data happens locally on your device as part of the normal functionality of the App.
         </p>
     </section>
 
-    <!-- Section 3: How we use your data -->
+    <!-- Section 3: Local storage & deletion -->
     <section class="card">
         <div class="section-header">
             <div class="section-index">3</div>
-            <h2>How We Use Your Data</h2>
+            <h2>Local Data Storage & Deletion</h2>
         </div>
-        <p>We use your information to:</p>
+        <p>
+            All app data, including logbook entries, profile details, and settings are stored exclusively on your device.
+            We do not have access to this information.
+        </p>
+        <p>You can remove this data at any time by:</p>
         <ul>
-            <li>Provide and maintain the core functionality of the app.</li>
-            <li>Help you restore your data if you reinstall or switch devices (if applicable).</li>
-            <li>Improve app stability, performance, and user experience.</li>
-            <li>Respond to support requests and feedback you send to us.</li>
+            <li>Deleting the App from your device, which removes all associated local data.</li>
         </ul>
+        <p>
+            Once the App is deleted, the locally stored data is permanently removed and cannot be recovered by us.
+        </p>
     </section>
 
-    <!-- Section 4: Third-party services -->
+     <!-- Section 4: Contact & Support -->
     <section class="card">
         <div class="section-header">
             <div class="section-index">4</div>
-            <h2>Third-Party Services</h2>
-        </div>
-        <p>
-            We may use trusted third-party services (for example, analytics or crash reporting tools) to help us
-            understand app performance and usage. These services may process limited technical data (such as
-            device type or anonymized identifiers) strictly for the purposes described in this policy.
-        </p>
-        <p>
-            We do not allow third parties to use your data for their own marketing or advertising without your consent.
-        </p>
-    </section>
-
-    <!-- Section 5: Your rights -->
-    <section class="card">
-        <div class="section-header">
-            <div class="section-index">5</div>
-            <h2>Your Rights & Choices</h2>
-        </div>
-        <p>
-            Depending on your location, you may have the right to:
-        </p>
-        <ul>
-            <li>Access the personal data we store about you.</li>
-            <li>Request correction or deletion of your personal data.</li>
-            <li>Object to or restrict certain types of processing.</li>
-        </ul>
-        <p>
-            If you’d like to exercise any of these rights, contact us using the email below and we’ll do our best to help.
-        </p>
-    </section>
-
-    <!-- Section 6: Contact -->
-    <section class="card">
-        <div class="section-header">
-            <div class="section-index">6</div>
             <h2>Contact & Support</h2>
         </div>
         <p>
-            If you have any questions about this Privacy Policy or how we handle your data, you can reach us at:
+            If you have any questions about this Privacy Policy or how we handle your data, you can reach us at <a href="mailto:help@tidlogbook.com" class="email-link">help@tidlogbook.com</a>.
         </p>
-        <div class="email-chip">
-            <span>Support:</span>
-            <a href="mailto:support@yourdomain.com">support@yourdomain.com</a>
-        </div>
-
-        <a class="primary-button" href="mailto:support@yourdomain.com">
-            Contact support<span>✉️</span>
-        </a>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        © <span id="year"></span> Your App Name. All rights reserved.
-    </footer>
-</div>
-
-<script>
-    // Set current year automatically
-    document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-</body>
-</html>
+            </section>
