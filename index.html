@@ -137,6 +137,52 @@
   }
 
   .form-shell button:hover {
+    filter: brightness(1.05);
+  }
+
+  .form-shell button:active {
+    transform: translateY(1px) scale(0.99);
+    filter: brightness(0.96);
+  }
+
+  .form-note {
+    margin-top: 8px;
+    font-size: 11px;
+    opacity: 0.7;
+  }
+
+  .right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .phone-frame {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .phone-frame img {
+    width: 100%;
+    display: block;
+  }
+
+  @media (max-width: 900px) {
+    .content {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 32px;
+    }
+
+    .right {
+      justify-content: flex-start;
+    }
+
+    .phone-frame {
+      max-width: 360px;
+    }
+  }
+</style>
 
 </head>
 <body>
