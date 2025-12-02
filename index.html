@@ -11,166 +11,133 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --bg: #031d20;
-      --accent: #559da6;
-      --text: #ffffff;
-    }
+<style>
+  :root {
+    --bg: #031d20;
+    --accent: #559da6;
+    --text: #ffffff;
+  }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    html, body {
-        min-height: 100%;
-        margin: 0;
-        font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background: radial-gradient(circle at top left, #05353b 0, var(--bg) 40%, #020e11 100%);
-        background-repeat: no-repeat;
-        background-size: cover;
-        color: var(--text);
-    }
-    
-    .page {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 32px 20px;
-    }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-    .content {
-      width: 100%;
-      max-width: 1120px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 48px;
-    }
+  /* FIX: solid base on html + gradient on body, no attachment: fixed */
+  html {
+    min-height: 100%;
+    background-color: #020e11;
+  }
 
-    .left {
-      max-width: 520px;
-    }
+  body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", sans-serif;
+    color: var(--text);
+    background: radial-gradient(circle at top left, #05353b 0, var(--bg) 40%, #020e11 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 200%; /* stretch enough to cover scroll bounce */
+  }
 
-    .logo-word {
-      font-size: clamp(40px, 6vw, 54px);
-      font-weight: 600;
-      color: var(--accent);
-      opacity: 0.85;
-      margin-bottom: 8px;
-      text-align: center;
-    }
+  .page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 20px;
+  }
 
-    .headline {
-      font-size: clamp(24px, 3.5vw, 32px);
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-    @media (max-width: 600px) {
-      .subcopy br {
-        display: none;
-    }
-    .subcopy {
-      font-size: 15px;
-      line-height: 1.6;
-      opacity: 0.9;
-      max-width: 420px;
-      margin-bottom: 24px;
-    }
+  .content {
+    width: 100%;
+    max-width: 1120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+  }
 
-    .form-wrapper {
-      max-width: 460px;
+  .left {
+    max-width: 520px;
+  }
+
+  .logo-word {
+    font-size: clamp(40px, 6vw, 54px);
+    font-weight: 600;
+    color: var(--accent);
+    opacity: 0.85;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  .headline {
+    font-size: clamp(24px, 3.5vw, 32px);
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  /* mobile: hide <br> only */
+  @media (max-width: 600px) {
+    .subcopy br {
+      display: none;
     }
+  }
 
-    .form-shell {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      border-radius: 20px;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.45);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
-    }
+  .subcopy {
+    font-size: 15px;
+    line-height: 1.6;
+    opacity: 0.9;
+    max-width: 420px;
+    margin-bottom: 24px;
+  }
 
-    .form-shell input[type="email"],
-    .form-shell input[type="text"] {
-      width: 100%;
-      border: none;
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--text);
-      padding: 12px 18px;
-      font-size: 14px;
-      border-radius: 8px;
-      outline: none;
-    }
+  .form-wrapper {
+    max-width: 460px;
+  }
 
-    .form-shell input::placeholder {
-      color: rgba(255, 255, 255, 0.5);
-    }
+  .form-shell {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 20px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+  }
 
-    .form-shell button {
-     border: none;
-     padding: 12px 18px;
-     font-size: 14px;
-     font-weight: 600;
-     cursor: pointer;
-     background: #3f7b82;  
-     color: var(--text);         
-     border-radius: 8px;
-     transition: filter 0.1s ease, transform 0.1s ease;
-     width: 100%;
-    }
+  .form-shell input[type="email"],
+  .form-shell input[type="text"] {
+    width: 100%;
+    border: none;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text);
+    padding: 12px 18px;
+    font-size: 14px;
+    border-radius: 8px;
+    outline: none;
+  }
 
-    .form-shell button:hover {
-      filter: brightness(1.05);
-    }
+  .form-shell input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
 
-    .form-shell button:active {
-      transform: translateY(1px) scale(0.99);
-      filter: brightness(0.96);
-    }
+  .form-shell button {
+    border: none;
+    padding: 12px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    background: #3f7b82;
+    color: var(--text);
+    border-radius: 8px;
+    transition: filter 0.1s ease, transform 0.1s ease;
+    width: 100%;
+  }
 
-    .form-note {
-      margin-top: 8px;
-      font-size: 11px;
-      opacity: 0.7;
-    }
+  .form-shell button:hover {
 
-    .right {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-    }
-
-    .phone-frame {
-      width: 100%;
-      max-width: 420px;
-    }
-
-    .phone-frame img {
-      width: 100%;
-      display: block;
-    }
-
-    @media (max-width: 900px) {
-      .content {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 32px;
-      }
-
-      .right {
-        justify-content: flex-start;
-      }
-
-      .phone-frame {
-        max-width: 360px;
-      }
-    }
-  </style>
 </head>
 <body>
   <div class="page">
