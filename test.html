@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Tid – Not your average logbook</title>
+  <title>Tid Logbook</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Tid is an intuitive logbook that makes logging effortless. Join the waitlist." />
 
@@ -83,21 +83,24 @@
 
     .form-shell {
       display: flex;
-      align-items: stretch;
-      border-radius: 999px;
-      overflow: hidden;
+      flex-direction: column;
+      gap: 10px;
+      border-radius: 20px;
+      padding: 20px;
       background: rgba(0, 0, 0, 0.45);
       border: 1px solid rgba(255, 255, 255, 0.18);
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
     }
 
-    .form-shell input[type="email"] {
-      flex: 1;
+    .form-shell input[type="email"],
+    .form-shell input[type="text"] {
+      width: 100%;
       border: none;
-      background: transparent;
+      background: rgba(255, 255, 255, 0.05);
       color: var(--text);
       padding: 12px 18px;
       font-size: 14px;
+      border-radius: 8px;
       outline: none;
     }
 
@@ -106,15 +109,16 @@
     }
 
     .form-shell button {
-      border: none;
-      padding: 0 26px;
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-      background: var(--accent);
-      color: #03151a;
-      transition: filter 0.1s ease, transform 0.1s ease;
-      white-space: nowrap;
+     border: none;
+     padding: 12px 18px;
+     font-size: 14px;
+     font-weight: 600;
+     cursor: pointer;
+     background: #3f7b82;  
+     color: var(--text);         
+     border-radius: 8px;
+     transition: filter 0.1s ease, transform 0.1s ease;
+     width: 100%;
     }
 
     .form-shell button:hover {
@@ -146,8 +150,6 @@
     .phone-frame img {
       width: 100%;
       display: block;
-      border-radius: 40px;
-      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.8);
     }
 
     @media (max-width: 900px) {
@@ -165,64 +167,70 @@
         max-width: 360px;
       }
     }
-
-    @media (max-width: 640px) {
-      .form-shell {
-        flex-direction: column;
-      }
-
-      .form-shell button {
-        width: 100%;
-        padding: 12px 18px;
-      }
-    }
   </style>
 </head>
 <body>
   <div class="page">
     <div class="content">
-      <!-- LEFT SIDE: text + email form -->
+      <!-- LEFT SIDE -->
       <div class="left">
         <div class="logo-word">Tid</div>
         <h1 class="headline">Not your average logbook.</h1>
         <p class="subcopy">
-          Tid is an intuitive logbook that makes logging effortless.
+          <strong>Tid</strong> is an intuitive logbook that makes logging effortless.
           Let’s not waste time – join the waitlist!
         </p>
 
         <div class="form-wrapper">
-          <form class="form-shell" action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
-            <!-- FormSubmit config -->
-            <input type="hidden" name="_subject" value="New Tid waitlist signup" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_captcha" value="false" />
-            <!-- Optional: thank-you page redirect -->
-            <!-- <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html" /> -->
 
-            <input
-              type="email"
-              name="email"
-              placeholder="Enter your email"
-              required
-              autocomplete="email"
-            />
-            <button type="submit">Join waitlist</button>
-          </form>
+          <!-- Hidden iframe to prevent Google redirect -->
+          <iframe name="hidden_iframe" style="display:none;"></iframe>
+
+<form class="form-shell"
+      action="https://docs.google.com/forms/d/e/1FAIpQLSezPRHZKwQPZwN74G7hkuwp08kGXntqIaHH370LQXWBQ8bS_g/formResponse"
+      method="POST"
+      target="hidden_iframe"
+      onsubmit="alert('Thanks! You are on the waitlist.'); setTimeout(() => this.reset(), 100);">
+
+  <!-- REQUIRED GOOGLE HIDDEN FIELDS -->
+  <input type="hidden" name="fvv" value="1">
+  <input type="hidden" name="partialResponse" value="[null,null,&quot;1098064527202758570&quot;]">
+  <input type="hidden" name="pageHistory" value="0">
+  <input type="hidden" name="fbzx" value="1098064527202758570">
+
+  <!-- EMAIL -->
+  <input
+    type="email"
+    name="entry.296163115"
+    placeholder="Enter your email"
+    required
+    autocomplete="email"
+  />
+
+  <!-- AIRLINE -->
+  <input
+    type="text"
+    name="entry.972524870"
+    placeholder="Current airline"
+    required
+  />
+
+  <button type="submit">Join waitlist</button>
+</form>
 
           <p class="form-note">
-            We’ll only email you about Tid and early-access updates.
+
           </p>
         </div>
       </div>
 
-      <!-- RIGHT SIDE: phone image -->
+      <!-- RIGHT SIDE IMAGE -->
       <div class="right">
         <div class="phone-frame">
-          <!-- PLACE YOUR IMAGE FILE HERE -->
-          <!-- Put your image in e.g. /assets/tid-phone.png and update the src below -->
-          <img src="assets/tid-phone.png" alt="Tid app screenshot" />
+          <img src="screenLog.png" alt="Image" />
         </div>
       </div>
+
     </div>
   </div>
 </body>
