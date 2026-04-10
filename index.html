@@ -16,6 +16,7 @@
     --bg: #031d20;
     --accent: #559da6;
     --text: #ffffff;
+    --line: rgba(255, 255, 255, 0.16);
   }
 
   * {
@@ -41,6 +42,94 @@
     background-size: 100% 200%; /* stretch enough to cover scroll bounce */
   }
 
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(2, 14, 17, 0.82);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .topbar-inner {
+    width: min(1120px, calc(100% - 40px));
+    min-height: 76px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .topbar-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .topbar-mark {
+    width: 44px;
+    height: 44px;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+    object-fit: cover;
+  }
+
+  .topbar-name {
+    font-size: 18px;
+    line-height: 1.1;
+  }
+
+  .topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: auto;
+  }
+
+  .topbar-link,
+  .topbar-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0 18px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 120ms ease, color 120ms ease, transform 120ms ease;
+  }
+
+  .topbar-link {
+    color: rgba(255, 255, 255, 0.76);
+  }
+
+  .topbar-link:hover,
+  .topbar-link:focus-visible {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text);
+  }
+
+  .topbar-button {
+    background: #3f7b82;
+    color: var(--text);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+  }
+
+  .topbar-button:hover,
+  .topbar-button:focus-visible {
+    transform: translateY(-1px);
+    background: #4a8d95;
+  }
+
   .page {
     min-height: 100vh;
     display: flex;
@@ -63,12 +152,17 @@
   }
 
   .logo-word {
-    font-size: clamp(40px, 6vw, 54px);
-    font-weight: 600;
-    color: var(--accent);
-    opacity: 0.85;
-    margin-bottom: 8px;
-    text-align: center;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo-word img {
+    width: clamp(88px, 10vw, 92px);
+    height: clamp(88px, 10vw, 92px);
+    display: block;
+    border-radius: 24px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
   }
 
   .headline {
@@ -168,29 +262,86 @@
   }
 
   @media (max-width: 900px) {
+    .topbar-inner {
+      width: min(100% - 24px, 1120px);
+      min-height: 76px;
+    }
+
+    .topbar-actions {
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
     .content {
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       gap: 32px;
     }
 
+    .left {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     .right {
-      justify-content: flex-start;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .subcopy {
+      text-align: center;
+    }
+
+    .form-wrapper {
+      width: 100%;
     }
 
     .phone-frame {
       max-width: 360px;
     }
   }
+
+  @media (max-width: 600px) {
+    .headline {
+      text-align: center;
+    }
+
+    .topbar-inner {
+      width: min(100% - 24px, 1120px);
+      min-height: 64px;
+    }
+
+    .phone-frame {
+      margin: 0 auto;
+    }
+  }
 </style>
 
 </head>
 <body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="topbar-brand" href="#" aria-label="Tid home">
+        <img class="topbar-mark" src="assets/favIconTid.png" alt="Tid app icon" />
+        <span class="topbar-name">Tid</span>
+      </a>
+      <nav class="topbar-actions" aria-label="Primary">
+        <a class="topbar-link" href="privacy.html">Privacy</a>
+        <a class="topbar-link" href="mailto:developer@robinsayyah.se">Support</a>
+        <!-- <a class="topbar-button" href="https://docs.google.com/forms/d/e/1FAIpQLSezPRHZKwQPZwN74G7hkuwp08kGXntqIaHH370LQXWBQ8bS_g/viewform" target="_blank" rel="noopener noreferrer">Join waitlist</a> -->
+      </nav>
+    </div>
+  </header>
+
   <div class="page">
     <div class="content">
       <!-- LEFT SIDE -->
       <div class="left">
-        <div class="logo-word">Tid</div>
+        <div class="logo-word">
+          <img src="assets/favIconTid.png" alt="Tid app icon" />
+        </div>
         <h1 class="headline">Not your average logbook.</h1>
         <p class="subcopy">
           Tid is an intuitive logbook that makes logging effortless.<br>
@@ -218,7 +369,7 @@
   <input
     type="email"
     name="entry.296163115"
-    placeholder="Enter your email"
+    placeholder="Email"
     required
     autocomplete="email"
   />
